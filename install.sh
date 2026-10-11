@@ -16,6 +16,7 @@ command -v i3status >/dev/null 2>&1 || packages="$packages i3status"
 command -v dmenu_run >/dev/null 2>&1 || packages="$packages dmenu"
 command -v feh >/dev/null 2>&1 || packages="$packages feh"
 command -v polybar >/dev/null 2>&1 || packages="$packages polybar"
+command -v convert >/dev/null 2>&1 || packages="$packages imagemagick"
 
 # i3 memanggil x-terminal-emulator. Jika belum tersedia, pasang terminal
 # ringan yang umum tersedia di repositori Debian/BlankOn.
@@ -50,6 +51,13 @@ cp "$repo_dir/home/.local/bin/bandit-polybar" "$HOME/.local/bin/bandit-polybar"
 cp "$repo_dir/home/.local/bin/bandit-wallpaper" "$HOME/.local/bin/bandit-wallpaper"
 cp "$repo_dir/logo/bandit.jpg" "$HOME/.local/share/blankon-bandit/logo/bandit.jpg"
 cp "$repo_dir/wallpaper/amel.png" "$HOME/.local/share/blankon-bandit/wallpaper/amel.png"
+
+# Create a compact face-only mark for the bar. The original artwork includes
+# the word BANDIT, which is kept as Polybar text beside the mark.
+convert "$HOME/.local/share/blankon-bandit/logo/bandit.jpg" \
+    -gravity center -crop 1024x780+0+0 +repage \
+    -resize 30x30^ -extent 30x30 \
+    "$HOME/.local/share/blankon-bandit/logo/bandit-mark.png"
 
 chmod +x "$HOME/.local/bin/bandit-bar-logo"
 chmod +x "$HOME/.local/bin/bandit-polybar"
