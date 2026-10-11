@@ -46,11 +46,13 @@ cp "$repo_dir/home/.config/i3/config" "$HOME/.config/i3/config"
 cp "$repo_dir/home/.config/i3status/config" "$HOME/.config/i3status/config"
 cp "$repo_dir/home/.config/polybar/config.ini" "$HOME/.config/polybar/config.ini"
 cp "$repo_dir/home/.local/bin/bandit-bar-logo" "$HOME/.local/bin/bandit-bar-logo"
+cp "$repo_dir/home/.local/bin/bandit-polybar" "$HOME/.local/bin/bandit-polybar"
 cp "$repo_dir/home/.local/bin/bandit-wallpaper" "$HOME/.local/bin/bandit-wallpaper"
 cp "$repo_dir/logo/bandit.jpg" "$HOME/.local/share/blankon-bandit/logo/bandit.jpg"
 cp "$repo_dir/wallpaper/amel.png" "$HOME/.local/share/blankon-bandit/wallpaper/amel.png"
 
 chmod +x "$HOME/.local/bin/bandit-bar-logo"
+chmod +x "$HOME/.local/bin/bandit-polybar"
 chmod +x "$HOME/.local/bin/bandit-wallpaper"
 
 echo "BlankOn Bandit i3 dotfiles installed."
