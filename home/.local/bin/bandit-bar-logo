@@ -13,8 +13,7 @@ command -v i3-msg >/dev/null 2>&1 || exit 0
 
 i3-msg '[title="Bandit Logo"] kill' >/dev/null 2>&1 || true
 feh --no-fehbg --borderless --no-menus --title "Bandit Logo" \
-    --geometry 38x38+5+1 --scale-down "$logo" >/dev/null 2>&1 &
+    --geometry 38x38+10+2 --scale-down "$logo" >/dev/null 2>&1 &
 
 sleep 0.2
-i3-msg '[title="Bandit Logo"] floating enable, sticky enable, border pixel 0, move position 5 px 1 px' >/dev/null 2>&1 || true
-
+i3-msg '[title="Bandit Logo"] floating enable, sticky enable, border pixel 0, move position 10 px 2 px' >/dev/null 2>&1 || true

@@ -1,0 +1,15 @@
+#!/bin/sh
+# Start the BlackNode-inspired Polybar and place the supplied Bandit image
+# over the left side of the floating bar.
+
+set -eu
+
+command -v polybar >/dev/null 2>&1 || exit 0
+
+polybar-msg cmd quit >/dev/null 2>&1 || true
+pkill -x polybar >/dev/null 2>&1 || true
+
+polybar bandit -c "$HOME/.config/polybar/config.ini" >/tmp/blankon-bandit-polybar.log 2>&1 &
+sleep 0.3
+"$HOME/.local/bin/bandit-bar-logo" &
+

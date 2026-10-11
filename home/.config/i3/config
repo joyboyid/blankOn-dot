@@ -83,24 +83,5 @@ client.placeholder      $ink    $ink    $muted $ink
 # gaps inner 8
 # gaps outer 4
 
-# The logo is overlaid at the left side of the i3bar using the supplied image.
-exec_always --no-startup-id ~/.local/bin/bandit-bar-logo
-
-bar {
-    status_command i3status -c ~/.config/i3status/config
-    position top
-    mode dock
-    workspace_buttons yes
-    tray_output primary
-    font pango:DejaVu Sans Mono 10
-    colors {
-        background         $ink
-        statusline         $cream
-        separator          $purple
-        focused_workspace  $purple $purple $cream
-        active_workspace   $ink    $ink    $green
-        inactive_workspace $ink    $ink    $muted
-        urgent_workspace   $orange $orange $ink
-        binding_mode       $orange $orange $ink
-    }
-}
+# BlackNode-inspired floating bar, translated from Waybar to Polybar for i3.
+exec_always --no-startup-id ~/.local/bin/bandit-polybar
