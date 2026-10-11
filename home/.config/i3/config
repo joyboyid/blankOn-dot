@@ -84,4 +84,5 @@ client.placeholder      $ink    $ink    $muted $ink
 # gaps outer 4
 
 # BlackNode-inspired floating bar, translated from Waybar to Polybar for i3.
+exec_always --no-startup-id ~/.local/bin/bandit-wallpaper
 exec_always --no-startup-id ~/.local/bin/bandit-polybar

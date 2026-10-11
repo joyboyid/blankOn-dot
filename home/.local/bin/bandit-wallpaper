@@ -1,0 +1,12 @@
+#!/bin/sh
+# Apply the wallpaper supplied with the dotfiles.
+
+set -eu
+
+wallpaper="${BANDIT_WALLPAPER:-$HOME/.local/share/blankon-bandit/wallpaper/amel.png}"
+
+[ -r "$wallpaper" ] || exit 0
+command -v feh >/dev/null 2>&1 || exit 0
+
+feh --no-fehbg --bg-fill "$wallpaper"
+

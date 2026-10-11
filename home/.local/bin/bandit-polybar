@@ -9,7 +9,6 @@ command -v polybar >/dev/null 2>&1 || exit 0
 polybar-msg cmd quit >/dev/null 2>&1 || true
 pkill -x polybar >/dev/null 2>&1 || true
 
-polybar bandit -c "$HOME/.config/polybar/config.ini" >/tmp/blankon-bandit-polybar.log 2>&1 &
+polybar bandit -c "$HOME/.config/polybar/config.ini" >"${XDG_RUNTIME_DIR:-/tmp}/blankon-bandit-polybar.log" 2>&1 &
 sleep 0.3
 "$HOME/.local/bin/bandit-bar-logo" &
-

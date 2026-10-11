@@ -40,14 +40,18 @@ else
     echo "Semua dependency sudah tersedia."
 fi
 
-mkdir -p "$HOME/.config/i3" "$HOME/.config/i3status" "$HOME/.local/bin" "$HOME/.local/share/blankon-bandit/logo"
+mkdir -p "$HOME/.config/i3" "$HOME/.config/i3status" "$HOME/.config/polybar" "$HOME/.local/bin" "$HOME/.local/share/blankon-bandit/logo" "$HOME/.local/share/blankon-bandit/wallpaper"
 
 cp "$repo_dir/home/.config/i3/config" "$HOME/.config/i3/config"
 cp "$repo_dir/home/.config/i3status/config" "$HOME/.config/i3status/config"
+cp "$repo_dir/home/.config/polybar/config.ini" "$HOME/.config/polybar/config.ini"
 cp "$repo_dir/home/.local/bin/bandit-bar-logo" "$HOME/.local/bin/bandit-bar-logo"
+cp "$repo_dir/home/.local/bin/bandit-wallpaper" "$HOME/.local/bin/bandit-wallpaper"
 cp "$repo_dir/logo/bandit.jpg" "$HOME/.local/share/blankon-bandit/logo/bandit.jpg"
+cp "$repo_dir/wallpaper/amel.png" "$HOME/.local/share/blankon-bandit/wallpaper/amel.png"
 
 chmod +x "$HOME/.local/bin/bandit-bar-logo"
+chmod +x "$HOME/.local/bin/bandit-wallpaper"
 
 echo "BlankOn Bandit i3 dotfiles installed."
 echo "Reload i3 with Mod+Shift+c."
