@@ -57,6 +57,7 @@ cp "$repo_dir/wallpaper/amel.png" "$HOME/.local/share/blankon-bandit/wallpaper/a
 convert "$HOME/.local/share/blankon-bandit/logo/bandit.jpg" \
     -gravity center -crop 1024x780+0+0 +repage \
     -resize 30x30^ -extent 30x30 \
+    -background '#ff851b' -alpha remove -alpha off \
     "$HOME/.local/share/blankon-bandit/logo/bandit-mark.png"
 
 chmod +x "$HOME/.local/bin/bandit-bar-logo"

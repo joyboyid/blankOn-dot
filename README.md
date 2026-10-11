@@ -27,7 +27,7 @@ Dependency yang dipasang otomatis:
 
 Jika ingin memakai terminal lain, ubah nilai `$term` di `home/.config/i3/config` sebelum instalasi.
 
-Logo Bandit ditampilkan sebagai mark wajah kecil di sisi kiri Polybar menggunakan `feh`. Installer membuat `bandit-mark.png` dari logo asli agar teks tidak terduplikasi di bar. Polybar dipakai karena mendukung panel floating, sudut membulat, modul terpisah, dan layout kiri-tengah-kanan seperti referensi BlackNode.
+Logo Bandit ditampilkan sebagai mark wajah kecil di sisi kiri Polybar menggunakan `feh`, dengan latar oranye solid agar tidak muncul checkerboard transparansi. Installer membuat `bandit-mark.png` dari logo asli agar teks tidak terduplikasi di bar. Polybar berjalan sebagai panel floating dengan margin dan sudut membulat seperti referensi BlackNode.
 
 Jika bar tidak muncul, periksa log dengan:
 
