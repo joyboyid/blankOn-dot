@@ -1,0 +1,106 @@
+# BlankOn Bandit — i3 configuration
+# Theme inspired by the Bandit pixel-art logo.
+
+set $mod Mod4
+set $term x-terminal-emulator
+set $menu dmenu_run -i -fn 'DejaVu Sans Mono-11' -nb '#111018' -nf '#f7f3ed' -sb '#7b3fc6' -sf '#ffffff'
+
+font pango:DejaVu Sans Mono 10
+
+# Bandit palette: orange, purple, green, black, cream.
+set $orange #ff851b
+set $purple #7b3fc6
+set $green #7cff45
+set $ink #111018
+set $cream #f7f3ed
+set $muted #a99fb8
+
+# Launchers
+bindsym $mod+Return exec --no-startup-id $term
+bindsym $mod+d exec --no-startup-id $menu
+bindsym $mod+Shift+q kill
+
+# Focus and movement
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Layouts
+bindsym $mod+e layout toggle split
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+c reload
+
+# Workspaces
+set $ws1 "1:main"
+set $ws2 "2:web"
+set $ws3 "3:code"
+set $ws4 "4:chat"
+set $ws5 "5:media"
+set $ws6 "6:misc"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+
+# Window defaults
+default_border pixel 2
+hide_edge_borders smart
+client.focused          $purple $purple $cream $green
+client.focused_inactive $ink    $ink    $muted $purple
+client.unfocused        $ink    $ink    $muted $ink
+client.urgent            $orange $orange $ink $orange
+client.placeholder      $ink    $ink    $muted $ink
+
+# Optional gaps, supported by i3-gaps and harmless to remove on vanilla i3.
+# gaps inner 8
+# gaps outer 4
+
+# The logo is overlaid at the left side of the i3bar using the supplied image.
+exec_always --no-startup-id ~/.local/bin/bandit-bar-logo
+
+bar {
+    status_command i3status -c ~/.config/i3status/config
+    position top
+    mode dock
+    workspace_buttons yes
+    tray_output primary
+    font pango:DejaVu Sans Mono 10
+    colors {
+        background         $ink
+        statusline         $cream
+        separator          $purple
+        focused_workspace  $purple $purple $cream
+        active_workspace   $ink    $ink    $green
+        inactive_workspace $ink    $ink    $muted
+        urgent_workspace   $orange $orange $ink
+        binding_mode       $orange $orange $ink
+    }
+}
